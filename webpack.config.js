@@ -39,7 +39,10 @@ const baseConfig = {
             plugins: [
               ["@babel/plugin-proposal-decorators", { legacy: true }],
               ["@babel/plugin-proposal-class-properties", { loose: true }],
+              "@babel/plugin-proposal-nullish-coalescing-operator",
+              "@babel/plugin-proposal-optional-chaining",
               "@babel/plugin-syntax-dynamic-import",
+              "babel-plugin-styled-components",
             ],
           },
         },
