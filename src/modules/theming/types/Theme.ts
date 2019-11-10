@@ -7,4 +7,7 @@ export type Theme = {
   fontColors: {
     normal: string
   }
+  shadows: {
+    light: string
+  }
 }
