@@ -7,7 +7,7 @@ import { HeaderLink } from "./HeaderLink"
 const Container = styled.div`
   position: fixed;
 
-  top: 16px;
+  top: 32px;
   left: 0px;
   right: 0px;
 

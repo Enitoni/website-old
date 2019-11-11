@@ -25,6 +25,9 @@ body {
   font-family: Heebo, sans-serif;
 
   color: ${getFontColor("normal")};
+}
+
+html {
   background: ${getColor("background")};
 }
 
