@@ -6,7 +6,6 @@ import React from "react"
 
 const Container = styled(Card)`
   display: flex;
-
   padding: 64px;
 `
 

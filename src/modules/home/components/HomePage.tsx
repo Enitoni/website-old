@@ -1,9 +1,11 @@
 import React from "react"
-import { LandingBlurb } from "./LandingBlurb"
-import { SectionTitle } from "../../core/components/SectionTitle"
 import styled from "../../theming/custom"
 
-const PortfolioTitle = styled(SectionTitle)`
+import { LandingBlurb } from "./LandingBlurb"
+import { SectionTitle } from "../../core/components/SectionTitle"
+import { PortfolioGrid } from "../../portfolio/components/PortfolioGrid"
+
+const Gap = styled.div`
   margin-top: 32px;
 `
 
@@ -11,7 +13,8 @@ export function HomePage() {
   return (
     <>
       <LandingBlurb />
-      <PortfolioTitle title="Portfolio" />
+      <Gap />
+      <PortfolioGrid />
     </>
   )
 }
