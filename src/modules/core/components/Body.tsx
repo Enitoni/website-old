@@ -9,13 +9,15 @@ import { Route, useRouter } from "../../../common/routing/hooks/useRouter"
 import { HomePage } from "../../home/components/HomePage"
 
 const Container = styled.main`
-  margin-top: ${parseInt(HEADER_HEIGHT) + 64}px;
+  margin-top: ${parseInt(HEADER_HEIGHT) + 32}px;
   display: flex;
   justify-content: center;
 `
 
 const Content = styled.div`
-  width: ${CONTENT_WIDTH};
+  width: ${parseInt(CONTENT_WIDTH) + 32}px;
+
+  padding: 0px 16px;
 `
 
 const routes: Route[] = [

@@ -7,12 +7,13 @@ import { HeaderLink } from "./HeaderLink"
 const Container = styled.div`
   position: fixed;
 
-  top: 32px;
+  top: 0px;
   left: 0px;
   right: 0px;
 
   display: flex;
   justify-content: center;
+  z-index: 1;
 `
 
 const Content = styled.header`
@@ -20,7 +21,10 @@ const Content = styled.header`
   width: ${CONTENT_WIDTH};
 
   background: ${getColor("primary")};
-  border-radius: 3px;
+
+  border-radius: 8px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 
   backdrop-filter: blur(15px);
   box-shadow: ${getShadow("light")};
