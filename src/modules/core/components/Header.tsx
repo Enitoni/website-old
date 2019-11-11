@@ -1,9 +1,8 @@
 import styled from "../../theming/custom"
-import { CONTENT_WIDTH } from "../constants"
+import { CONTENT_WIDTH, HEADER_HEIGHT } from "../constants"
 import { getColor, getShadow } from "../../theming/helpers"
 import React from "react"
-
-export const HEADER_HEIGHT = "56px"
+import { HeaderLink } from "./HeaderLink"
 
 const Container = styled.div`
   position: fixed;
@@ -27,10 +26,18 @@ const Content = styled.header`
   box-shadow: ${getShadow("light")};
 `
 
+const Nav = styled.nav`
+  display: flex;
+`
+
 export function Header() {
   return (
     <Container>
-      <Content />
+      <Content>
+        <Nav>
+          <HeaderLink to="/" label="Home" icon="home" />
+        </Nav>
+      </Content>
     </Container>
   )
 }

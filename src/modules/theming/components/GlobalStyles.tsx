@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: Barlow, sans-serif;
+  font-family: Heebo, sans-serif;
 
   color: ${getFontColor("normal")};
   background: ${getColor("background")};
@@ -33,7 +33,6 @@ body {
 }
 
 a {
-  color: ${getColor("accent")};
   text-decoration: none;
 }
 
