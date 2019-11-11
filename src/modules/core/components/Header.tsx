@@ -23,7 +23,7 @@ const Content = styled.header`
   background: ${getColor("primary")};
   border-radius: 3px;
 
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   box-shadow: ${getShadow("light")};
 `
 
