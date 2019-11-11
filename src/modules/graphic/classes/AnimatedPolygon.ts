@@ -20,7 +20,7 @@ export class AnimatedPolygon implements Renderable {
     this.polygon = new Polygon({
       rotation: Math.random() * 360,
       x: Math.floor(Math.random() * canvas.width),
-      y: canvas.width + size,
+      y: canvas.height + size,
       outlined,
       points,
       size,
