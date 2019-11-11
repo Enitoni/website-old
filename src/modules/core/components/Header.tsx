@@ -36,6 +36,7 @@ export function Header() {
       <Content>
         <Nav>
           <HeaderLink to="/" label="Home" icon="home" />
+          <HeaderLink to="/about" label="About" icon="book" />
         </Nav>
       </Content>
     </Container>

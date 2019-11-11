@@ -14,6 +14,8 @@ export type HeaderLinkProps = {
 
 const Icon = styled(SVGIcon)`
   ${size(24)}
+
+  transition: 200ms ease fill;
 `
 
 const Label = styled.span`
@@ -22,6 +24,8 @@ const Label = styled.span`
 
   margin-top: 3px;
   margin-left: 16px;
+
+  transition: 200ms ease color;
 `
 
 const Container = styled.a<{ active: boolean }>`
@@ -44,7 +48,6 @@ const Container = styled.a<{ active: boolean }>`
     props.active &&
     `
     opacity: 1;
-    background: ${props.theme.colors.primary};
 
     ${Icon} {
       fill: ${props.theme.colors.accent};
