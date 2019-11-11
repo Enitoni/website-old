@@ -3,6 +3,7 @@ import React from "react"
 
 import { HEADER_HEIGHT, CONTENT_WIDTH } from "../constants"
 import { PropsWithChildren } from "react"
+import { Card } from "./Card"
 
 const Container = styled.main`
   margin-top: ${parseInt(HEADER_HEIGHT) + 64}px;
@@ -17,7 +18,7 @@ const Content = styled.div`
 export function Body(props: PropsWithChildren<{}>) {
   return (
     <Container>
-      <Content>Hi</Content>
+      <Content></Content>
     </Container>
   )
 }
