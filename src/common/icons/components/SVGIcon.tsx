@@ -2,12 +2,12 @@ import { IconType } from "../types/IconType"
 import * as icons from "../icons"
 import React from "react"
 
-export interface IconProps {
+export interface SVGIconProps {
   className?: string
   name: IconType
 }
 
-export function Icon(props: IconProps) {
+export function SVGIcon(props: SVGIconProps) {
   const { name, className } = props
 
   if (!icons[name]) return null
