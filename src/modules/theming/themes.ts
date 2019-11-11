@@ -2,7 +2,7 @@ import { Theme } from "./types/Theme"
 
 export const lightTheme: Theme = {
   colors: {
-    primary: "rgba(255, 255, 255, 0.85)",
+    primary: "rgba(255, 255, 255, 0.9)",
     background: "#efefef",
     accent: "#14df96",
   },
