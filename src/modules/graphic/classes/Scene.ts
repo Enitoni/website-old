@@ -23,7 +23,7 @@ export class Scene implements Renderable {
       if (this.elements.length < MAX_ITEMS) {
         this.createElement()
       }
-    }, 200)
+    }, 800)
   }
 
   public stop() {
@@ -33,8 +33,8 @@ export class Scene implements Renderable {
   private createElement() {
     const element = new AnimatedPolygon(this.canvas, {
       accented: Math.random() > 0.6,
-      spin: Math.random() - 0.5,
-      velocity: Math.random() * 1.5 + 1,
+      spin: Math.random() * 0.2 - 0.1,
+      velocity: Math.random() * 1.2 + 0.5,
       theme: this.options.theme,
     })
 
