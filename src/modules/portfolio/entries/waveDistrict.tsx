@@ -1,6 +1,6 @@
 import { Project } from "../types/Project"
 import React from "react"
-import { typescript, node } from "../technologies"
+import { typescript, node, react, webpack, postgres, mobx } from "../technologies"
 
 export const waveDistrict: Project = {
   name: "WaveDistrict",
@@ -10,7 +10,7 @@ export const waveDistrict: Project = {
       href: "https://gitlab.com/wavedistrict/web-client",
     },
   ],
-  stack: [typescript, node],
+  stack: [typescript, node, react, webpack, postgres, mobx],
   shortDescription: "A community based audio platform",
   theme: {
     accent: "#00ba8c",

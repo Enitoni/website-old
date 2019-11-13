@@ -1,5 +1,6 @@
 import { Project } from "../types/Project"
 import React from "react"
+import { typescript, node } from "../technologies"
 
 export const gears: Project = {
   name: "Gears",
@@ -13,7 +14,7 @@ export const gears: Project = {
       href: "https://gitlab.com/enitoni-gears/gears/tree/master/gears",
     },
   ],
-  stack: [],
+  stack: [typescript, node],
   shortDescription: "JavaScript library for building bots",
   theme: {
     accent: "#f5c721",
