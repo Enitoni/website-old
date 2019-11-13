@@ -56,7 +56,7 @@ export const webpack: Technology = {
   link: "https://webpack.js.org/",
   icon: (
     <svg width="250" height="250" viewBox="0 0 250 250" fill="none">
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           d="M125 0L235.479 62.5V187.5L125 250L14.5208 187.5V62.5L125 0Z"
           fill="white"
@@ -109,7 +109,7 @@ export const mobx: Technology = {
   link: "https://mobx.js.org",
   icon: (
     <svg width="250" height="250" viewBox="0 0 250 250" fill="none">
-      <g clip-path="url(#clip0)">
+      <g clipPath="url(#clip0)">
         <path
           d="M250 230.854V19.1475C250 10.4619 244.216 3.13184 236.292 0.788086L227.293 6.17285L127.425 112.654L124.294 122.44L122.465 131.835L153.607 248.222L158.425 249.999H230.854C241.428 249.999 250 241.428 250 230.854"
           fill="#EA6618"
