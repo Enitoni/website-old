@@ -13,6 +13,7 @@ export const gears: Project = {
       href: "https://gitlab.com/enitoni-gears/gears/tree/master/gears",
     },
   ],
+  stack: [],
   shortDescription: "JavaScript library for building bots",
   theme: {
     accent: "#f5c721",

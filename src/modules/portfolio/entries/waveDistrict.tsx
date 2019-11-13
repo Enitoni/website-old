@@ -9,6 +9,7 @@ export const waveDistrict: Project = {
       href: "https://gitlab.com/wavedistrict/web-client",
     },
   ],
+  stack: [],
   shortDescription: "A community based audio platform",
   theme: {
     accent: "#00ba8c",

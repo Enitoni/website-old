@@ -1,3 +1,5 @@
+import { Technology } from "./Technology"
+
 export type ProjectLink = {
   type: "code" | "canonical"
   href: string
@@ -15,4 +17,5 @@ export type Project = {
   longDescription: React.ReactNode
   theme: ProjectTheme
   links: ProjectLink[]
+  stack: Technology[]
 }
