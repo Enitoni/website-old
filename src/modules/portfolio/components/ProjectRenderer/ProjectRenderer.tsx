@@ -17,11 +17,11 @@ export type ProjectRendererProps = {
 
 const Animation = keyframes`
   0% {
-    transform: translateY(100vh) translateZ(0);;
+    transform: translateY(100vh) translateZ(0);
   }
 
   100% {
-    transform: translateY(0vh) translateZ(0);;
+    transform: translateY(0vh) translateZ(0);
   }
 `
 

@@ -3,6 +3,8 @@ import styled from "../../../theming/custom"
 import React from "react"
 import { Link } from "./Link"
 import { ButtonList } from "../../../../common/button/components/ButtonList"
+import { SidebarSection } from "./SidebarSection"
+import { TechnologyListItem } from "../TechnologyListItem"
 
 export type BodyProps = {
   project: Project
@@ -23,6 +25,10 @@ const Sidebar = styled.div`
   margin-left: 64px;
 `
 
+const Actions = styled(ButtonList)`
+  margin-bottom: 32px;
+`
+
 export function Body(props: BodyProps) {
   const { project } = props
 
@@ -30,11 +36,16 @@ export function Body(props: BodyProps) {
     <Container>
       <Description>{project.longDescription}</Description>
       <Sidebar>
-        <ButtonList>
+        <Actions>
           {project.links.map(link => (
             <Link link={link} key={link.type} />
           ))}
-        </ButtonList>
+        </Actions>
+        <SidebarSection title="Stack" icon="box">
+          {project.stack.map(tech => (
+            <TechnologyListItem technology={tech} key={tech.name} />
+          ))}
+        </SidebarSection>
       </Sidebar>
     </Container>
   )
