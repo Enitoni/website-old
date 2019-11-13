@@ -6,11 +6,19 @@ export type BodyProps = {
   project: Project
 }
 
+export const SIDEBAR_WIDTH = "320px"
+
 export const Container = styled.div`
   display: flex;
 `
 
-const Description = styled.div``
+const Description = styled.div`
+  flex: 1;
+`
+
+const Sidebar = styled.div`
+  width: ${SIDEBAR_WIDTH};
+`
 
 export function Body(props: BodyProps) {
   const { project } = props
@@ -18,6 +26,7 @@ export function Body(props: BodyProps) {
   return (
     <Container>
       <Description>{project.longDescription}</Description>
+      <Sidebar></Sidebar>
     </Container>
   )
 }
