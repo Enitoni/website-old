@@ -53,7 +53,7 @@ export const gears: Project = {
       </p>
       <p>
         I started working on this project because there weren't any similar tools that I
-        were satisfied with. Currently the project is very mature and is well tested.
+        were satisfied with. Currently the project is very mature and well tested.
       </p>
     </>
   ),
