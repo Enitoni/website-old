@@ -51,5 +51,35 @@ export const waveDistrict: Project = {
       </defs>
     </svg>
   ),
-  longDescription: <></>,
+  longDescription: (
+    <>
+      <p>
+        WaveDistrict was a community based audio platform that was discontinued in
+        September 28, 2019.
+      </p>
+      <p>
+        The project allowed you to upload audio and use social features such as ones found
+        on sites like SoundCloud. As audio quality was very important to me, it used the
+        Opus codec at 96kbps for free users and offered lossless FLAC streaming for the
+        upcoming premium plan.
+      </p>
+      <p>
+        It was quite ambitious and thus had a very big scope with many features. The most
+        notable ones would be realtime functionality meaning any action done on site would
+        be broadcasted to keep the UI in sync for all users. The second biggest feature
+        was the realtime visualizer which used the Web Audio API.
+      </p>
+      <p>
+        I discontinued it due to cost and lack of engagement. I am extremely grateful for
+        the time spent working on this project and it has been the foundation for my
+        knowledge in programming.
+      </p>
+      <p>
+        <strong>
+          I am currently working on a viewable demo of what the project was like, stay
+          tuned for that.
+        </strong>
+      </p>
+    </>
+  ),
 }
