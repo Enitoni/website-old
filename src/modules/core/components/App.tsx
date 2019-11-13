@@ -6,6 +6,7 @@ import { Background } from "../../graphic/components/Background"
 
 import { Header } from "./Header"
 import { Body } from "./Body"
+import { ProjectOverlay } from "../../portfolio/components/ProjectOverlay"
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
       <Header />
       <Body />
       <Background />
+      <ProjectOverlay />
     </ThemeProvider>
   )
 }

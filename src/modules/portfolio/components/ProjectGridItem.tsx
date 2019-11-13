@@ -4,6 +4,7 @@ import { Card } from "../../core/components/Card"
 import React, { cloneElement } from "react"
 import { cover, transparentize } from "polished"
 import { getColor } from "../../theming/helpers"
+import { useStores } from "../../../common/state/hooks/useStores"
 
 export type ProjectGridItemProps = {
   entry: Project
@@ -77,11 +78,17 @@ const Description = styled.span`
 `
 
 export function ProjectGridItem(props: ProjectGridItemProps) {
+  const { selectedProjectStore } = useStores()
+
   const { entry } = props
   const { name, icon, shortDescription, theme } = entry
 
+  const handleClick = () => {
+    selectedProjectStore.selected = entry
+  }
+
   return (
-    <Container color={theme.primary}>
+    <Container onClick={handleClick} color={theme.primary}>
       <Thumbnail color={theme.primary}>
         <LogoContainer>
           {cloneElement(icon as any, {
