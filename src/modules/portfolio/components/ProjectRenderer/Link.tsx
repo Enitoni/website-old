@@ -32,7 +32,7 @@ const Container = styled.a`
   display: flex;
   align-items: center;
 
-  padding: 8px 16px;
+  padding: 12px 16px;
 
   border-radius: 4px;
   border: solid 2px ${getColor("accent")};

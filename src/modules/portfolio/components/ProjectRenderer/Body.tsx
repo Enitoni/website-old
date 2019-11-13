@@ -2,6 +2,7 @@ import { Project } from "../../types/Project"
 import styled from "../../../theming/custom"
 import React from "react"
 import { Link } from "./Link"
+import { ButtonList } from "../../../../common/button/components/ButtonList"
 
 export type BodyProps = {
   project: Project
@@ -29,9 +30,11 @@ export function Body(props: BodyProps) {
     <Container>
       <Description>{project.longDescription}</Description>
       <Sidebar>
-        {project.links.map(link => (
-          <Link link={link} key={link.type} />
-        ))}
+        <ButtonList>
+          {project.links.map(link => (
+            <Link link={link} key={link.type} />
+          ))}
+        </ButtonList>
       </Sidebar>
     </Container>
   )
