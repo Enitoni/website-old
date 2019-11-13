@@ -1,12 +1,12 @@
-import { PortfolioEntry } from "../types/PortfolioEntry"
+import { Project } from "../types/Project"
 import styled from "../../theming/custom"
 import { Card } from "../../core/components/Card"
 import React, { cloneElement } from "react"
 import { cover, transparentize } from "polished"
 import { getColor } from "../../theming/helpers"
 
-export type PortfolioGridItemProps = {
-  entry: PortfolioEntry
+export type ProjectGridItemProps = {
+  entry: Project
 }
 
 const Thumbnail = styled.div<{ color: string }>`
@@ -76,7 +76,7 @@ const Description = styled.span`
   font-size: 1em;
 `
 
-export function PortfolioGridItem(props: PortfolioGridItemProps) {
+export function ProjectGridItem(props: ProjectGridItemProps) {
   const { entry } = props
   const { name, icon, shortDescription, theme } = entry
 

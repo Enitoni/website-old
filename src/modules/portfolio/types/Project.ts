@@ -1,18 +1,18 @@
-export type PortfolioLink = {
+export type ProjectLink = {
   type: "code" | "canonical"
   link: string
 }
 
-export type PortfolioTheme = {
+export type ProjectTheme = {
   primary: string
   accent: string
 }
 
-export type PortfolioEntry = {
+export type Project = {
   name: string
   icon: React.ReactNode
   shortDescription: string
   longDescription: React.ReactNode
-  theme: PortfolioTheme
-  links: PortfolioLink[]
+  theme: ProjectTheme
+  links: ProjectLink[]
 }

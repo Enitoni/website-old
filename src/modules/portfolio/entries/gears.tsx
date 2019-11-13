@@ -1,7 +1,7 @@
-import { PortfolioEntry } from "../types/PortfolioEntry"
+import { Project } from "../types/Project"
 import React from "react"
 
-export const gears: PortfolioEntry = {
+export const gears: Project = {
   name: "Gears",
   links: [],
   shortDescription: "JavaScript library for building bots",

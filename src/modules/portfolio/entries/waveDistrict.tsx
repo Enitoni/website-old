@@ -1,7 +1,7 @@
-import { PortfolioEntry } from "../types/PortfolioEntry"
+import { Project } from "../types/Project"
 import React from "react"
 
-export const waveDistrict: PortfolioEntry = {
+export const waveDistrict: Project = {
   name: "WaveDistrict",
   links: [],
   shortDescription: "A community based audio platform",

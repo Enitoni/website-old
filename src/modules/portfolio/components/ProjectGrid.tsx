@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import entries from "../entries"
 import React from "react"
-import { PortfolioGridItem } from "./PortfolioGridItem"
+import { ProjectGridItem } from "./ProjectGridItem"
 
 const Container = styled.div`
   display: grid;
@@ -10,11 +10,11 @@ const Container = styled.div`
   grid-gap: 32px;
 `
 
-export function PortfolioGrid() {
+export function ProjectGrid() {
   return (
     <Container>
       {entries.map(entry => (
-        <PortfolioGridItem key={entry.name} entry={entry} />
+        <ProjectGridItem key={entry.name} entry={entry} />
       ))}
     </Container>
   )
