@@ -1,4 +1,4 @@
-import styled from "../../../theming/custom"
+import styled, { keyframes, css } from "../../../theming/custom"
 import { Project } from "../../types/Project"
 import { getColor } from "../../../theming/helpers"
 import React from "react"
@@ -8,12 +8,24 @@ import { size } from "polished"
 import { useStores } from "../../../../common/state/hooks/useStores"
 import { Header } from "./Header"
 import { Body } from "./Body"
+import { TransitionStatus } from "react-transition-group/Transition"
 
 export type ProjectRendererProps = {
   project: Project
+  status: TransitionStatus
 }
 
-const Overlay = styled.div`
+const Animation = keyframes`
+  0% {
+    transform: translateY(100vh);
+  }
+
+  100% {
+    transform: translateY(0vh);
+  }
+`
+
+const Overlay = styled.div<{ status: TransitionStatus }>`
   position: fixed;
   z-index: 10;
 
@@ -23,6 +35,7 @@ const Overlay = styled.div`
   min-height: 100vh;
 
   background: ${getColor("primaryFallback")};
+  transition: 500ms ease transform;
 
   @supports (backdrop-filter: blur(20px)) {
     background: ${getColor("primary")};
@@ -33,6 +46,22 @@ const Overlay = styled.div`
 
   display: flex;
   justify-content: center;
+
+  ${props => {
+    const { status } = props
+
+    if (status === "entering")
+      return css`
+        animation: ${Animation} ease 500ms;
+        animation-fill-mode: forwards;
+      `
+
+    if (status === "exiting")
+      return css`
+        animation: ${Animation} ease 500ms reverse;
+        animation-fill-mode: forwards;
+      `
+  }}
 `
 
 const Container = styled.div`
@@ -72,10 +101,10 @@ const Content = styled.div`
 
 export function ProjectRenderer(props: ProjectRendererProps) {
   const { selectedProjectStore } = useStores()
-  const { project } = props
+  const { project, status } = props
 
   return (
-    <Overlay>
+    <Overlay status={status}>
       <Container>
         <CloseButton
           icon="circledX"
