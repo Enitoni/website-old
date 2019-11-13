@@ -3,7 +3,16 @@ import React from "react"
 
 export const gears: Project = {
   name: "Gears",
-  links: [],
+  links: [
+    {
+      type: "canonical",
+      href: "https://gears.enitoni.dev/",
+    },
+    {
+      type: "code",
+      href: "https://gitlab.com/enitoni-gears/gears/tree/master/gears",
+    },
+  ],
   shortDescription: "JavaScript library for building bots",
   theme: {
     accent: "#f5c721",
