@@ -2,7 +2,7 @@ import { Project } from "../types/Project"
 import styled from "../../theming/custom"
 import { Card } from "../../core/components/Card"
 import React, { cloneElement } from "react"
-import { cover, transparentize } from "polished"
+import { cover, transparentize, darken, desaturate, lighten } from "polished"
 import { getColor } from "../../theming/helpers"
 import { useStores } from "../../../common/state/hooks/useStores"
 
@@ -13,9 +13,12 @@ export type ProjectGridItemProps = {
 const Thumbnail = styled.div<{ color: string }>`
   width: 100%;
   padding-bottom: 50%;
+  background: ${props => desaturate(0.2, lighten(0.05, props.color))};
 
-  background: ${props => transparentize(0.1, props.color)};
-  backdrop-filter: grayscale(100%) blur(20px);
+  @supports (backdrop-filter: grayscale(100%) blur(20px)) {
+    background: ${props => transparentize(0.1, props.color)};
+    backdrop-filter: grayscale(100%) blur(20px);
+  }
 
   position: relative;
   transition: 200ms ease background;
@@ -31,6 +34,11 @@ const Container = styled(Card)<{ color: string }>`
 
   background: transparent;
   backdrop-filter: none;
+
+  @supports (backdrop-filter: blur(15px)) {
+    background: transparent;
+    backdrop-filter: none;
+  }
 
   &:hover {
     cursor: pointer;
@@ -56,8 +64,12 @@ const LogoContainer = styled.div`
 `
 
 const Content = styled.div`
-  background: ${getColor("primary")};
-  backdrop-filter: blur(10px);
+  background: ${getColor("primaryFallback")};
+
+  @supports (backdrop-filter: blur(10px)) {
+    background: ${getColor("primary")};
+    backdrop-filter: blur(10px);
+  }
 
   padding: 16px;
   display: flex;

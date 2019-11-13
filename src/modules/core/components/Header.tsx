@@ -20,13 +20,17 @@ const Content = styled.header`
   height: ${HEADER_HEIGHT};
   width: ${CONTENT_WIDTH};
 
-  background: ${getColor("primary")};
-
   border-radius: 8px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 
-  backdrop-filter: blur(15px);
+  background: ${getColor("primaryFallback")};
+
+  @supports (backdrop-filter: blur(15px)) {
+    backdrop-filter: blur(15px);
+    background: ${getColor("primary")};
+  }
+
   box-shadow: ${getShadow("light")};
 `
 

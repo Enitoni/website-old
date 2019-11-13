@@ -22,8 +22,12 @@ const Overlay = styled.div`
   left: 0px;
   min-height: 100vh;
 
-  background: ${getColor("primary")};
-  backdrop-filter: blur(20px);
+  background: ${getColor("primaryFallback")};
+
+  @supports (backdrop-filter: blur(20px)) {
+    background: ${getColor("primary")};
+    backdrop-filter: blur(20px);
+  }
 
   overflow-y: scroll;
 
