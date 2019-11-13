@@ -1,6 +1,6 @@
 export type ProjectLink = {
   type: "code" | "canonical"
-  link: string
+  href: string
 }
 
 export type ProjectTheme = {

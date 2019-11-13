@@ -3,7 +3,12 @@ import React from "react"
 
 export const waveDistrict: Project = {
   name: "WaveDistrict",
-  links: [],
+  links: [
+    {
+      type: "code",
+      href: "https://gitlab.com/wavedistrict/web-client",
+    },
+  ],
   shortDescription: "A community based audio platform",
   theme: {
     accent: "#00ba8c",
