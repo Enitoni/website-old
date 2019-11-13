@@ -36,7 +36,9 @@ const Container = styled.a`
 
   border-radius: 4px;
   border: solid 2px ${getColor("accent")};
-  transition: 200ms ease background;
+
+  transition: 200ms ease;
+  transition-property: background transform;
 
   &:hover {
     cursor: pointer;
@@ -49,6 +51,10 @@ const Container = styled.a`
     ${Label} {
       color: white;
     }
+  }
+
+  &:active {
+    transform: translateY(3px);
   }
 `
 
