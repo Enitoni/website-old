@@ -44,7 +44,7 @@ export function Background() {
         sceneRef.current.stop()
       }
     }
-  })
+  }, [theme])
 
   const frame: CanvasAnimationHandler = (context, canvas, runningTime) => {
     const { current: scene } = sceneRef
