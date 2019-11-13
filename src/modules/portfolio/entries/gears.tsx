@@ -43,13 +43,15 @@ export const gears: Project = {
   longDescription: (
     <>
       <p>
-        Gears is a library aims to simplify the creation of text based bots. It is a fully
-        generic library that works with anything that can be boiled down to sending and
-        receiving messages.
+        Gears is a library that aims to simplify the creation of text based bots. It is a
+        fully generic library that works with anything that can be boiled down to sending
+        and receiving messages.
       </p>
       <p>
-        Currently it is compatible with Node.js libraries such as Discord.js, ws, and
-        readline.
+        It supports rich matching functionality of messages based on prefixes, type, and
+        more. Custom matchers can also be made. It has a very sophisticated middleware
+        system inspired by Koa.js which makes it easy to write clean reusable code with
+        it.
       </p>
       <p>
         I started working on this project because there weren't any similar tools that I
