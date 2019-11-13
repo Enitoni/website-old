@@ -12,7 +12,7 @@ import { useStores } from "../../../common/state/hooks/useStores"
 import { useObserver } from "mobx-react-lite"
 
 const Main = styled.div<{ visible: boolean }>`
-  transition: 200ms ease opacity;
+  transition: 350ms ease opacity;
 
   ${props => {
     if (props.visible) {
