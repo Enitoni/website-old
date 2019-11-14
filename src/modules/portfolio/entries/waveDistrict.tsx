@@ -3,6 +3,7 @@ import React from "react"
 import { typescript, node, react, webpack, postgres, mobx } from "../technologies"
 
 export const waveDistrict: Project = {
+  period: ["11.2015", "09.2019"],
   name: "WaveDistrict",
   links: [
     {
