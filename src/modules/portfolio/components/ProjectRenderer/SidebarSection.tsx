@@ -12,8 +12,8 @@ export type SidebarSectionProps = PropsWithChildren<{
 }>
 
 const Container = styled.div`
-  & + & {
-    margin-bottom: 16px;
+  & ~ & {
+    margin-top: 32px;
   }
 `
 
