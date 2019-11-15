@@ -18,6 +18,7 @@ const Content = styled.div`
   width: ${parseInt(CONTENT_WIDTH) + 32}px;
 
   padding: 0px 16px;
+  padding-bottom: 32px;
 `
 
 const routes: Route[] = [
