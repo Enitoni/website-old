@@ -46,6 +46,9 @@ export function Body(props: BodyProps) {
             <TechnologyListItem technology={tech} key={tech.name} />
           ))}
         </SidebarSection>
+        <SidebarSection title="Period" icon="calendar">
+          {project.period[0]} — {project.period[1]}
+        </SidebarSection>
       </Sidebar>
     </Container>
   )
