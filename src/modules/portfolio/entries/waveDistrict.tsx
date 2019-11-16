@@ -63,7 +63,7 @@ export const waveDistrict: Project = {
     <>
       <p>
         WaveDistrict was a community based audio platform that was discontinued in
-        September 28, 2019.
+        September 28, 2019. The logo was designed by a friend of mine.
       </p>
       <p>
         The project allowed you to upload audio and use social features such as ones found
