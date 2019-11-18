@@ -31,23 +31,32 @@ const Actions = styled(ButtonList)`
 
 export function Body(props: BodyProps) {
   const { project } = props
+  const { links, stack, period } = project
+
+  const renderLinks = () => {
+    if (links.length === 0) return
+
+    return (
+      <Actions>
+        {links.map(link => (
+          <Link link={link} key={link.type} />
+        ))}
+      </Actions>
+    )
+  }
 
   return (
     <Container>
       <Description>{project.longDescription}</Description>
       <Sidebar>
-        <Actions>
-          {project.links.map(link => (
-            <Link link={link} key={link.type} />
-          ))}
-        </Actions>
+        {renderLinks()}
         <SidebarSection title="Stack" icon="box">
-          {project.stack.map(tech => (
+          {stack.map(tech => (
             <TechnologyListItem technology={tech} key={tech.name} />
           ))}
         </SidebarSection>
         <SidebarSection title="Period" icon="calendar">
-          {project.period[0]} — {project.period[1]}
+          {period[0]} — {period[1]}
         </SidebarSection>
       </Sidebar>
     </Container>
