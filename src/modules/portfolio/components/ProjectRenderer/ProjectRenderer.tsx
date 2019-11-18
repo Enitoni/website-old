@@ -9,6 +9,8 @@ import { useStores } from "../../../../common/state/hooks/useStores"
 import { Header } from "./Header"
 import { Body } from "./Body"
 import { TransitionStatus } from "react-transition-group/Transition"
+import { ImageRenderer } from "../../../../common/dom/components/ImageRenderer"
+import { ImageSlideshow } from "../../../../common/dom/components/ImageSlideshow"
 
 export type ProjectRendererProps = {
   project: Project
@@ -99,9 +101,34 @@ const Content = styled.div`
   margin-left: 32px;
 `
 
+const SlideshowContainer = styled.div`
+  margin-bottom: 32px;
+`
+
+const Slideshow = styled(ImageSlideshow)`
+  width: 100%;
+  padding-bottom: ${(9 / 16) * 100}%;
+`
+
 export function ProjectRenderer(props: ProjectRendererProps) {
   const { selectedProjectStore } = useStores()
   const { project, status } = props
+  const { screenshots = [], key } = project
+
+  const renderSlideshow = () => {
+    if (screenshots.length === 0) return
+
+    const entries = screenshots.map((label, i) => ({
+      src: `/img/screenshots/${key}/${i + 1}.png`,
+      label,
+    }))
+
+    return (
+      <SlideshowContainer>
+        <Slideshow entries={entries} />
+      </SlideshowContainer>
+    )
+  }
 
   return (
     <Overlay status={status}>
@@ -112,6 +139,7 @@ export function ProjectRenderer(props: ProjectRendererProps) {
         />
         <Content>
           <Header project={project} />
+          {renderSlideshow()}
           <Body project={project} />
         </Content>
       </Container>
