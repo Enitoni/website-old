@@ -3,6 +3,7 @@ import { typescript, react, webpack, mobx } from "../technologies"
 import React from "react"
 
 export const website: Project = {
+  key: "website",
   period: ["11.2019", "?"],
   name: "My website",
   links: [

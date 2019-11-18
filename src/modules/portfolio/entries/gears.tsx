@@ -3,6 +3,7 @@ import React from "react"
 import { typescript, node } from "../technologies"
 
 export const gears: Project = {
+  key: "gears",
   period: ["07.2018", "present"],
   name: "Gears",
   links: [

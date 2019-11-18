@@ -3,6 +3,7 @@ import { Project } from "../types/Project"
 import { typescript, node, react, postgres, mobx, webpack } from "../technologies"
 
 export const skins: Project = {
+  key: "skins",
   period: ["11.2017", "01.2018"],
   name: "skins! website",
   links: [],

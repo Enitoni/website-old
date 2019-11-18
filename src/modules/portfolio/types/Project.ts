@@ -11,6 +11,7 @@ export type ProjectTheme = {
 }
 
 export type Project = {
+  key: string
   name: string
   icon: React.ReactNode
   period: [string, string]
