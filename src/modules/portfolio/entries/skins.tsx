@@ -7,6 +7,7 @@ export const skins: Project = {
   name: "skins! website",
   links: [],
   stack: [typescript, node, react, webpack, postgres, mobx],
+  screenshots: ["Home", "List of available skins", "Detailed skin page"],
   shortDescription: "A commissioned website for the now gone skins! community",
   theme: {
     accent: "#44ce87",

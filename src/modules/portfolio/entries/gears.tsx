@@ -16,6 +16,7 @@ export const gears: Project = {
     },
   ],
   stack: [typescript, node],
+  screenshots: ["Home", "Guides", "API Reference"],
   shortDescription: "JavaScript library for building bots",
   theme: {
     accent: "#f5c721",

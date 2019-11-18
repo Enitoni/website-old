@@ -14,6 +14,7 @@ export type Project = {
   name: string
   icon: React.ReactNode
   period: [string, string]
+  screenshots?: string[]
   shortDescription: string
   longDescription: React.ReactNode
   theme: ProjectTheme
