@@ -34,7 +34,7 @@ const Overlay = styled.div<{ status: TransitionStatus }>`
   top: 0px;
   right: 0px;
   left: 0px;
-  min-height: 100vh;
+  bottom: 0px;
 
   background: ${getColor("primaryFallback")};
   transition: 500ms ease transform;

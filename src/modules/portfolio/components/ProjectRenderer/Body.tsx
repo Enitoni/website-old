@@ -14,6 +14,7 @@ export const SIDEBAR_WIDTH = "320px"
 
 export const Container = styled.div`
   display: flex;
+  margin-bottom: 64px;
 `
 
 const Description = styled.div`
