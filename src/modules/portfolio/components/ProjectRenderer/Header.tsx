@@ -10,6 +10,8 @@ const Container = styled.div`
   height: 48px;
   display: flex;
   align-items: center;
+
+  margin-bottom: 16px;
 `
 
 const Title = styled.h1`

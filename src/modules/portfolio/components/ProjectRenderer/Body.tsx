@@ -18,6 +18,7 @@ export const Container = styled.div`
 
 const Description = styled.div`
   flex: 1;
+  margin-top: -1em;
 `
 
 const Sidebar = styled.div`
