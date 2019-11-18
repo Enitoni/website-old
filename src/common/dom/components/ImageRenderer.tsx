@@ -19,7 +19,6 @@ export function ImageRenderer(props: ImageRendererProps) {
   const { src, alt, className } = props
 
   const [image] = useState(() => document.createElement("img"))
-
   const [loaded, setLoaded] = useState(image.complete)
 
   useEffect(() => {
