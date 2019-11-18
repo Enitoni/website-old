@@ -39,7 +39,7 @@ export const website: Project = {
     <>
       <p>
         My website is a portfolio and has information about me as well as ways to contact
-        me.
+        me. Designed and developed by me.
       </p>
       <p>
         Yep, that's it. You can see the source if you click the green button to the right.
