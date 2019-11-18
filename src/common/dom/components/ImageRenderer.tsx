@@ -20,15 +20,22 @@ export function ImageRenderer(props: ImageRendererProps) {
 
   const [image] = useState(() => document.createElement("img"))
   const [loaded, setLoaded] = useState(image.complete)
+  const [currentSrc, setCurrentSrc] = useState("")
 
   useEffect(() => {
     image.onload = () => {
       setLoaded(true)
+      setCurrentSrc(src)
     }
 
-    image.src = src
-    setLoaded(image.complete)
-  }, [image.complete, image.onload, image.src, src])
+    setLoaded(false)
+
+    const timer = window.setTimeout(() => {
+      image.src = src
+    }, 200)
+
+    return () => window.clearTimeout(timer)
+  }, [image, src])
 
   return (
     <Container
@@ -37,7 +44,7 @@ export function ImageRenderer(props: ImageRendererProps) {
       aria-label={alt}
       className={className}
       style={{
-        backgroundImage: `url(${src})`,
+        backgroundImage: `url(${currentSrc})`,
       }}
     />
   )
