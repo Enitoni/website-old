@@ -3,7 +3,7 @@ import React from "react"
 import { typescript, node } from "../technologies"
 
 export const gears: Project = {
-  period: ["07.2018", "now"],
+  period: ["07.2018", "present"],
   name: "Gears",
   links: [
     {
