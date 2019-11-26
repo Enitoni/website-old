@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import styled from "../../../modules/theming/custom"
+import styled, { keyframes, css } from "../../../modules/theming/custom"
 import React from "react"
 import { cover } from "polished"
 import { TransitionGroup, Transition } from "react-transition-group"
@@ -16,29 +16,32 @@ const Container = styled.div`
   overflow: hidden;
 `
 
+const Animation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`
+
 const RenderedImage = styled.div<{ status: TransitionStatus }>`
   ${cover()}
-
-  transition: 500ms ease opacity;
   background-size: cover;
 
   ${props => {
     const { status } = props
 
     if (status === "entering")
-      return `
-      opacity: 1;
-    `
-
-    if (status === "entered")
-      return `
-      opacity: 1;
-    `
+      return css`
+        animation: ${Animation} 500ms ease forwards;
+      `
 
     if (status === "exiting")
-      return `
-      opacity: 0;
-    `
+      return css`
+        animation: ${Animation} 500ms ease forwards reverse;
+      `
   }}
 `
 
