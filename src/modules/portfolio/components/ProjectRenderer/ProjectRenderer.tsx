@@ -2,7 +2,7 @@ import styled, { keyframes, css } from "../../../theming/custom"
 import { Project } from "../../types/Project"
 import { getColor } from "../../../theming/helpers"
 import React from "react"
-import { CONTENT_WIDTH } from "../../../core/constants"
+import { CONTENT_WIDTH, SMALL_SCREEN_QUERY } from "../../../core/constants"
 import { Button } from "../../../../common/button/components/Button"
 import { size } from "polished"
 import { useStores } from "../../../../common/state/hooks/useStores"
@@ -16,6 +16,8 @@ export type ProjectRendererProps = {
   project: Project
   status: TransitionStatus
 }
+
+const QUERY = `@media (max-width: ${parseInt(CONTENT_WIDTH) + 32}px)`
 
 const Animation = keyframes`
   0% {
@@ -68,37 +70,20 @@ const Overlay = styled.div<{ status: TransitionStatus }>`
 
 const Container = styled.div`
   width: ${CONTENT_WIDTH};
-  padding-top: 64px;
 
+  padding-top: 64px;
   display: flex;
   align-items: flex-start;
-`
 
-const CloseButton = styled(Button)`
-  display: block;
-
-  opacity: 0.5;
-  ${size(48)};
-
-  transition: 200ms ease;
-  transition-property: opacity transform;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &:active {
-    transform: translateY(3px);
-  }
-
-  > .icon {
-    ${size(48)};
+  ${QUERY} {
+    padding-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 `
 
 const Content = styled.div`
   flex: 1;
-  margin-left: 32px;
 `
 
 const SlideshowContainer = styled.div`
@@ -111,7 +96,6 @@ const Slideshow = styled(ImageSlideshow)`
 `
 
 export function ProjectRenderer(props: ProjectRendererProps) {
-  const { selectedProjectStore } = useStores()
   const { project, status } = props
   const { screenshots = [], key } = project
 
@@ -133,10 +117,6 @@ export function ProjectRenderer(props: ProjectRendererProps) {
   return (
     <Overlay status={status}>
       <Container>
-        <CloseButton
-          icon="circledX"
-          onClick={() => (selectedProjectStore.selected = undefined)}
-        />
         <Content>
           <Header project={project} />
           {renderSlideshow()}

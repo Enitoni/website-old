@@ -10,11 +10,18 @@ export type BodyProps = {
   project: Project
 }
 
+const SINGLE_COLUMN_QUERY = "@media (max-width: 800px)"
+
 export const SIDEBAR_WIDTH = "320px"
 
 export const Container = styled.div`
   display: flex;
   margin-bottom: 64px;
+
+  ${SINGLE_COLUMN_QUERY} {
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
 `
 
 const Description = styled.div`
@@ -25,6 +32,11 @@ const Description = styled.div`
 const Sidebar = styled.div`
   width: ${SIDEBAR_WIDTH};
   margin-left: 64px;
+
+  ${SINGLE_COLUMN_QUERY} {
+    margin-left: 0px;
+    width: 100%;
+  }
 `
 
 const Actions = styled(ButtonList)`
