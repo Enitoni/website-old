@@ -10,6 +10,8 @@ import { ProjectOverlay } from "../../portfolio/components/ProjectOverlay"
 import styled from "../../theming/custom"
 import { useStores } from "../../../common/state/hooks/useStores"
 import { useObserver } from "mobx-react-lite"
+import { IS_SERVER } from "../constants"
+import { Head } from "./Head"
 
 const Main = styled.div<{ visible: boolean }>`
   transition: 350ms ease opacity;
@@ -27,8 +29,14 @@ export function App() {
   const { selectedProjectStore } = useStores()
   const hasProjectOpen = useObserver(() => !!selectedProjectStore.selected)
 
+  const renderHead = () => {
+    if (IS_SERVER) return null
+    return <Head />
+  }
+
   return (
     <ThemeProvider>
+      {renderHead()}
       <GlobalStyles />
       <Main visible={!hasProjectOpen}>
         <Header />
