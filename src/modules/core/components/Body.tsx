@@ -7,6 +7,7 @@ import { Route, useRouter } from "../../../common/routing/hooks/useRouter"
 
 // Pages
 import { HomePage } from "../../home/components/HomePage"
+import { AboutPage } from "../../about/components/AboutPage"
 
 const Container = styled.main`
   margin-top: ${parseInt(HEADER_HEIGHT) + 32}px;
@@ -33,6 +34,10 @@ const routes: Route[] = [
   {
     pattern: "/",
     render: () => <HomePage />,
+  },
+  {
+    pattern: "/about",
+    render: () => <AboutPage />,
   },
 ]
 
