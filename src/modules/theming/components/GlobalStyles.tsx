@@ -29,6 +29,8 @@ body {
   @media (max-width: 700px) {
     font-size: 15px;
   }
+  
+  scrollbar-width: none;
 }
 
 html {
@@ -77,4 +79,12 @@ button {
   -webkit-appearance: none;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
 `

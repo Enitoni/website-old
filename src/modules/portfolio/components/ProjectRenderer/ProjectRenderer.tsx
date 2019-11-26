@@ -47,6 +47,7 @@ const Overlay = styled.div<{ status: TransitionStatus }>`
   }
 
   overflow-y: scroll;
+  scrollbar-width: none;
 
   display: flex;
   justify-content: center;
