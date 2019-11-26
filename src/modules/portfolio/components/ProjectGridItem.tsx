@@ -28,6 +28,9 @@ const Thumbnail = styled.div<{ color: string }>`
 `
 
 const Container = styled(Card)<{ color: string }>`
+  display: flex;
+  flex-direction: column;
+
   padding: 0px;
   position: relative;
   overflow: hidden;
@@ -65,6 +68,7 @@ const LogoContainer = styled.div`
 
 const Content = styled.div`
   background: ${getColor("primaryFallback")};
+  flex: 1;
 
   @supports (backdrop-filter: blur(10px)) {
     background: ${getColor("primary")};
@@ -104,8 +108,10 @@ export function ProjectGridItem(props: ProjectGridItemProps) {
       <Thumbnail color={theme.primary}>
         <LogoContainer>
           {cloneElement(icon as any, {
-            width: 96,
-            height: 96,
+            style: {
+              width: "38%",
+              height: "38%",
+            },
           })}
         </LogoContainer>
       </Thumbnail>

@@ -3,10 +3,16 @@ import { Card } from "../../core/components/Card"
 import { size } from "polished"
 import { getColor } from "../../theming/helpers"
 import React from "react"
+import { SMALL_SCREEN_QUERY } from "../../core/constants"
 
 const Container = styled(Card)`
   display: flex;
   padding: 64px;
+
+  ${SMALL_SCREEN_QUERY} {
+    padding: 32px;
+    font-size: 10px;
+  }
 `
 
 const Info = styled.div`
@@ -28,13 +34,10 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-size: 2em;
   font-weight: 400;
-`
 
-const Avatar = styled.img`
-  border-radius: 100%;
-  border: solid 4px ${getColor("primary")};
-
-  ${size(155)};
+  ${SMALL_SCREEN_QUERY} {
+    margin-top: 2px;
+  }
 `
 
 export function LandingBlurb() {

@@ -26,6 +26,10 @@ const Label = styled.span`
   margin-left: 16px;
 
   transition: 200ms ease color;
+
+  @media (max-width: 680px) {
+    display: none;
+  }
 `
 
 const Container = styled.a<{ active: boolean }>`

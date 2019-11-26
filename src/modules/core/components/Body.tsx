@@ -1,7 +1,7 @@
 import styled from "../../theming/custom"
 import React from "react"
 
-import { HEADER_HEIGHT, CONTENT_WIDTH } from "../constants"
+import { HEADER_HEIGHT, CONTENT_WIDTH, SMALL_SCREEN_QUERY } from "../constants"
 import { PropsWithChildren } from "react"
 import { Route, useRouter } from "../../../common/routing/hooks/useRouter"
 
@@ -12,6 +12,10 @@ const Container = styled.main`
   margin-top: ${parseInt(HEADER_HEIGHT) + 32}px;
   display: flex;
   justify-content: center;
+
+  ${SMALL_SCREEN_QUERY} {
+    margin-top: ${parseInt(HEADER_HEIGHT) + 16}px;
+  }
 `
 
 const Content = styled.div`
@@ -19,6 +23,10 @@ const Content = styled.div`
 
   padding: 0px 16px;
   padding-bottom: 32px;
+
+  ${SMALL_SCREEN_QUERY} {
+    padding-bottom: 16px;
+  }
 `
 
 const routes: Route[] = [

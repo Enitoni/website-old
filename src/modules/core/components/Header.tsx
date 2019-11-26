@@ -1,5 +1,10 @@
 import styled from "../../theming/custom"
-import { CONTENT_WIDTH, HEADER_HEIGHT } from "../constants"
+import {
+  CONTENT_WIDTH,
+  HEADER_HEIGHT,
+  SMALL_SCREEN_QUERY_WIDTH,
+  SMALL_SCREEN_QUERY,
+} from "../constants"
 import { getColor, getShadow } from "../../theming/helpers"
 import React from "react"
 import { HeaderLink } from "./HeaderLink"
@@ -14,6 +19,12 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   z-index: 1;
+
+  padding: 0px 16px;
+
+  ${SMALL_SCREEN_QUERY} {
+    padding: 0px;
+  }
 `
 
 const Content = styled.header`
@@ -32,6 +43,10 @@ const Content = styled.header`
   }
 
   box-shadow: ${getShadow("light")};
+
+  ${SMALL_SCREEN_QUERY} {
+    border-radius: 0px;
+  }
 `
 
 const Nav = styled.nav`

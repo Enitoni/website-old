@@ -25,6 +25,10 @@ body {
   font-family: Heebo, sans-serif;
 
   color: ${getFontColor("normal")};
+
+  @media (max-width: 700px) {
+    font-size: 15px;
+  }
 }
 
 html {
