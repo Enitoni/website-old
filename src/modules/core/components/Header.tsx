@@ -60,7 +60,7 @@ export function Header() {
         <Nav>
           <HeaderLink to="/" label="Portfolio" icon="home" />
           <HeaderLink to="/about" label="About" icon="book" />
-          <HeaderLink to="/contact" label="Contact me" icon="mail" />
+          <HeaderLink to="/contact" label="Contact" icon="mail" />
         </Nav>
       </Content>
     </Container>
