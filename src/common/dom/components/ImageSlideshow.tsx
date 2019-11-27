@@ -14,13 +14,26 @@ export type ImageSlideshowProps = {
   className?: string
 }
 
-export const Container = styled.div``
+export const Container = styled.div`
+  position: relative;
+`
 
 const SelectedImage = styled(ImageRenderer)`
   border-radius: 4px;
   box-shadow: ${getShadow("light")};
 
   margin-bottom: 16px;
+`
+
+const ImageLabel = styled.div`
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  padding: 16px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
 `
 
 const preloadEntries = (entries: SlideshowEntry[]) => {
@@ -55,6 +68,7 @@ export function ImageSlideshow(props: ImageSlideshowProps) {
   return (
     <Container>
       <SelectedImage className={className} src={entry.src} alt={entry.label} />
+      <ImageLabel>{entry.label}</ImageLabel>
     </Container>
   )
 }
