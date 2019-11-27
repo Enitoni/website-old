@@ -27,7 +27,7 @@ export class AnimatedPolygon implements Renderable {
     })
   }
 
-  public render(context: CanvasRenderingContext2D) {
+  public render(delta: number, context: CanvasRenderingContext2D) {
     const { accented, theme } = this.options
 
     const color = accented ? theme.colors.accent : theme.fontColors.normal
@@ -35,9 +35,9 @@ export class AnimatedPolygon implements Renderable {
     context.fillStyle = color
     context.strokeStyle = color
 
-    this.polygon.move(0, -this.options.velocity)
-    this.polygon.rotate(this.options.spin)
-    this.polygon.render(context)
+    this.polygon.move(0, -this.options.velocity * delta)
+    this.polygon.rotate(this.options.spin * delta)
+    this.polygon.render(delta, context)
   }
 
   public get isOutsideViewport() {

@@ -21,7 +21,7 @@ export class Polygon implements Renderable {
     this.options.rotation! += d
   }
 
-  public render(context: CanvasRenderingContext2D) {
+  public render(delta: number, context: CanvasRenderingContext2D) {
     const { outlined = false, rotation = 0, points, size, x, y } = this.options
 
     const sideArc = (Math.PI * 2) / points

@@ -46,13 +46,13 @@ export function Background() {
     }
   }, [theme])
 
-  const frame: CanvasAnimationHandler = (context, canvas, runningTime) => {
+  const frame: CanvasAnimationHandler = (context, canvas, runningTime, delta) => {
     const { current: scene } = sceneRef
 
     canvas.width = canvas.offsetWidth
     canvas.height = canvas.offsetHeight
 
-    if (scene) scene.render(context)
+    if (scene) scene.render(delta, context)
   }
 
   useCanvasAnimation(ref, frame)

@@ -1,3 +1,3 @@
 export type Renderable = {
-  render: (context: CanvasRenderingContext2D) => void
+  render: (delta: number, context: CanvasRenderingContext2D) => void
 }
