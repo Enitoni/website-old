@@ -28,7 +28,7 @@ export function Head() {
       <meta property="og:title" content={title} />
       <meta property="og:url" content={`${CANONICAL_HOST}${pathname}`} />
       <meta property="og:type" content="website" />
-      <meta property="og:image" content={`${CANONICAL_HOST}/thumb.png`} />
+      <meta property="og:image" content={`${CANONICAL_HOST}/img/thumb.png`} />
       <meta property="og:site_name" content="enitoni.dev" />
     </>
   )
