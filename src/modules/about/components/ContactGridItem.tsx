@@ -17,18 +17,23 @@ const Container = styled.div`
 const IconContainer = styled.a`
   display: block;
 
-  padding-bottom: 80%;
+  padding-bottom: 100%;
   width: 100%;
   height: 0px;
+
+  max-width: 128px;
+  max-height: 128px;
 
   position: relative;
 `
 
 const Icon = styled.div`
-  ${cover(32)}
+  ${cover()}
 `
 
 const Name = styled.a`
+  margin-top: 16px;
+
   font-size: 1em;
   font-weight: 600;
 

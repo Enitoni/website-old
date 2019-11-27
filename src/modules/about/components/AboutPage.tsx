@@ -45,12 +45,16 @@ const Content = styled.div`
 `
 
 const ContactTitle = styled(Title)`
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 `
 
 const ContactContainer = styled(Card)`
   margin-top: 32px;
   padding: 64px;
+
+  ${SINGLE_COLUMN_QUERY} {
+    padding: 32px;
+  }
 `
 
 export function AboutPage() {
