@@ -27,6 +27,10 @@ export class AnimatedPolygon implements Renderable {
     })
   }
 
+  public update(newOptions: Partial<AnimatedPolygonOptions>) {
+    this.options = { ...this.options, ...newOptions }
+  }
+
   public render(delta: number, context: CanvasRenderingContext2D) {
     const { accented, theme } = this.options
 

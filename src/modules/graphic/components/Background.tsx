@@ -33,9 +33,13 @@ export function Background() {
       canvas.width = canvas.offsetWidth
       canvas.height = canvas.offsetHeight
 
-      const scene = new Scene({ theme }, canvas)
+      if (!sceneRef.current) {
+        const scene = new Scene({ theme }, canvas)
+        sceneRef.current = scene
+      } else {
+        sceneRef.current.update({ theme })
+      }
 
-      sceneRef.current = scene
       sceneRef.current.start()
     }
 

@@ -16,6 +16,11 @@ export class Scene implements Renderable {
 
   public update(options: SceneOptions) {
     this.options = options
+    const { theme } = options
+
+    for (const element of this.elements) {
+      element.update({ theme })
+    }
   }
 
   public start() {
