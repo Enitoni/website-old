@@ -3,6 +3,7 @@ import styled from "../../theming/custom"
 import { Card } from "../../core/components/Card"
 import { ImageRenderer } from "../../../common/dom/components/ImageRenderer"
 import { size } from "polished"
+import { ContactList } from "./ContactList"
 
 const SINGLE_COLUMN_QUERY = "@media (max-width: 700px) "
 
@@ -43,6 +44,15 @@ const Content = styled.div`
   }
 `
 
+const ContactTitle = styled(Title)`
+  margin-bottom: 16px;
+`
+
+const ContactContainer = styled(Card)`
+  margin-top: 32px;
+  padding: 64px;
+`
+
 export function AboutPage() {
   return (
     <>
@@ -62,17 +72,21 @@ export function AboutPage() {
           </p>
           <p>
             In early 2016 I started my journey into the world of web development. It
-            started with a project that I later named “WaveDistrict” it was a community
-            based audio platform that allowed you to upload music. The project was
-            discontinued in September 2019 but it has been the biggest building block for
-            my programming knowledge today.
+            started with a project that I later named “WaveDistrict” which was a community
+            based audio platform that allowed you to upload audio to share with others,
+            similar to SoundCloud. The project was discontinued in September 2019 but it
+            has been the biggest building block for my programming knowledge today.
           </p>
           <p>
-            Now I am looking to relocate to Oslo to find either the dream job or to study
-            and solidify my knowledge.
+            I am currently looking to relocate to Oslo, either to find my dream job or to
+            study in order to solidify my knowledge.
           </p>
         </Content>
       </AboutContainer>
+      <ContactContainer>
+        <ContactTitle>Find me here!</ContactTitle>
+        <ContactList />
+      </ContactContainer>
     </>
   )
 }
