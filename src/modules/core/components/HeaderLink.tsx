@@ -68,7 +68,7 @@ export function HeaderLink(props: HeaderLinkProps) {
   const [active, onClick] = useRouteLink(to)
 
   return (
-    <Container active={active} onClick={onClick}>
+    <Container href={to} active={active} onClick={onClick}>
       <Icon name={icon} />
       <Label>{label}</Label>
     </Container>
