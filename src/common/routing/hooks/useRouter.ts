@@ -4,7 +4,8 @@ import UrlPattern from "url-pattern"
 import { useObserver } from "mobx-react-lite"
 import { useStores } from "../../state/hooks/useStores"
 
-export interface Route {
+export type Route = {
+  name: string
   pattern: string
   render: (params: any) => React.ReactElement
 }
@@ -21,10 +22,10 @@ export const useRouter = (routes: Route[]) => {
       }).match(pathname)
 
       if (match) {
-        return () => route.render(match)
+        return [route.name, () => route.render(match)] as const
       }
     }
 
-    return () => null
+    return ["", () => null] as const
   })
 }
