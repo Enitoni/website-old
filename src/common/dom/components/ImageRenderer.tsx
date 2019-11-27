@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useEffect } from "react"
 import styled, { keyframes, css } from "../../../modules/theming/custom"
 import React from "react"
 import { cover } from "polished"
 import { TransitionGroup, Transition } from "react-transition-group"
 import { TransitionStatus } from "react-transition-group/Transition"
+import { IS_SERVER } from "../../../modules/core/constants"
 
 export type ImageRendererProps = {
   src: string
@@ -51,6 +53,21 @@ const RenderedImage = styled.div<{ status: TransitionStatus }>`
 
 export function ImageRenderer(props: ImageRendererProps) {
   const { src, alt, className } = props
+
+  if (IS_SERVER) {
+    return (
+      <Container>
+        <RenderedImage
+          role="img"
+          aria-label={alt}
+          style={{
+            backgroundImage: `url(${src})`,
+          }}
+          status="entered"
+        />
+      </Container>
+    )
+  }
 
   const [image] = useState(() => document.createElement("img"))
   const [currentSrc, setCurrentSrc] = useState("")
