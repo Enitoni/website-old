@@ -11,6 +11,7 @@ export type ButtonProps = ButtonVariants & {
   className?: string
   icon?: IconType
   label?: string
+  title?: string
   onClick: () => void
 }
 
