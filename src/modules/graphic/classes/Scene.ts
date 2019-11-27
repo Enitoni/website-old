@@ -2,8 +2,6 @@ import { Renderable } from "../types/Renderable"
 import { AnimatedPolygon } from "./AnimatedPolygon"
 import { Theme } from "../../theming/types/Theme"
 
-const MAX_ITEMS = 50
-
 export type SceneOptions = {
   theme: Theme
 }
@@ -20,9 +18,13 @@ export class Scene implements Renderable {
 
   public start() {
     this.interval = window.setInterval(() => {
-      if (this.elements.length < MAX_ITEMS) {
+      const maxItems = this.canvas.offsetWidth / 100
+
+      if (this.elements.length < maxItems) {
         this.createElement()
       }
+
+      this.elements = this.elements.filter(x => !x.isOutsideViewport)
     }, 800)
   }
 
@@ -50,7 +52,5 @@ export class Scene implements Renderable {
     for (const element of this.elements) {
       element.render(context)
     }
-
-    this.elements = this.elements.filter(x => !x.isOutsideViewport)
   }
 }
