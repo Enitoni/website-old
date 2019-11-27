@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --config webpack.config.js",
     "client:build": "cross-env NODE_ENV=production webpack",
     "server:build": "tsc -p tsconfig.server.json",
-    "build": "rimraf build && yarn client:build && yarn server:build",
+    "build": "yarn client:build && yarn server:build",
     "production": "cross-env NODE_ENV=production node ./build/server/server.js",
     "lint": "eslint --ext .ts,.tsx src/"
   },
