@@ -14,6 +14,8 @@ export type ImageRendererProps = {
 const Container = styled.div`
   position: relative;
   overflow: hidden;
+
+  background: black;
 `
 
 const Animation = keyframes`
@@ -28,7 +30,9 @@ const Animation = keyframes`
 
 const RenderedImage = styled.div<{ status: TransitionStatus }>`
   ${cover()}
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 
   ${props => {
     const { status } = props
