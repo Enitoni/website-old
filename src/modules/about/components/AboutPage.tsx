@@ -4,6 +4,7 @@ import { Card } from "../../core/components/Card"
 import { ImageRenderer } from "../../../common/dom/components/ImageRenderer"
 import { size } from "polished"
 import { ContactGrid } from "./ContactGrid"
+import { useMeta } from "../../core/hooks/useMeta"
 
 const SINGLE_COLUMN_QUERY = "@media (max-width: 700px) "
 
@@ -58,6 +59,11 @@ const ContactContainer = styled(Card)`
 `
 
 export function AboutPage() {
+  useMeta({
+    title: "About me",
+    description: "General information about me and links to my online presence",
+  })
+
   return (
     <>
       <AboutContainer>
