@@ -3,8 +3,9 @@ import { IconType } from "../../../common/icons/types/IconType"
 import styled from "../../theming/custom"
 import { useRouteLink } from "../../../common/routing/hooks/useRouteLink"
 import { SVGIcon } from "../../../common/icons/components/SVGIcon"
-import { size, opacify } from "polished"
+import { size } from "polished"
 import { HEADER_HEIGHT } from "../constants"
+import { getFontColor } from "../../theming/helpers"
 
 export type HeaderLinkProps = {
   to: string
@@ -19,6 +20,8 @@ const Icon = styled(SVGIcon)`
 `
 
 const Label = styled.span`
+  color: ${getFontColor("normal")}
+
   font-size: 16px;
   font-weight: 500;
 
