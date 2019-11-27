@@ -1,10 +1,10 @@
 import { Contact } from "../types/Contact"
 import styled from "../../theming/custom"
 import React, { cloneElement } from "react"
-import { size, cover } from "polished"
+import { cover } from "polished"
 import { getFontColor } from "../../theming/helpers"
 
-export type ContactListItemProps = {
+export type ContactGridItemProps = {
   contact: Contact
 }
 
@@ -35,7 +35,7 @@ const Name = styled.a`
   color: ${getFontColor("normal")};
 `
 
-export function ContactListItem(props: ContactListItemProps) {
+export function ContactGridItem(props: ContactGridItemProps) {
   const { name, link, icon } = props.contact
 
   return (

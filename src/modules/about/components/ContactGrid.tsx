@@ -1,7 +1,7 @@
 import contacts from "../contacts"
 import styled from "../../theming/custom"
 import React from "react"
-import { ContactListItem } from "./ContactListItem"
+import { ContactGridItem } from "./ContactGridItem"
 
 const Container = styled.div`
   display: grid;
@@ -10,11 +10,11 @@ const Container = styled.div`
   grid-gap: 32px;
 `
 
-export function ContactList() {
+export function ContactGrid() {
   return (
     <Container>
       {contacts.map(c => (
-        <ContactListItem key={c.name} contact={c} />
+        <ContactGridItem key={c.name} contact={c} />
       ))}
     </Container>
   )

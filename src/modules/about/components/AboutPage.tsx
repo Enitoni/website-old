@@ -3,7 +3,7 @@ import styled from "../../theming/custom"
 import { Card } from "../../core/components/Card"
 import { ImageRenderer } from "../../../common/dom/components/ImageRenderer"
 import { size } from "polished"
-import { ContactList } from "./ContactList"
+import { ContactGrid } from "./ContactGrid"
 
 const SINGLE_COLUMN_QUERY = "@media (max-width: 700px) "
 
@@ -85,7 +85,7 @@ export function AboutPage() {
       </AboutContainer>
       <ContactContainer>
         <ContactTitle>Find me here!</ContactTitle>
-        <ContactList />
+        <ContactGrid />
       </ContactContainer>
     </>
   )
