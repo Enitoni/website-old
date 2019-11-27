@@ -5,7 +5,7 @@ import { typescript, node, react, webpack, postgres, mobx } from "../technologie
 export const waveDistrict: Project = {
   key: "wavedistrict",
   period: ["11.2015", "09.2019"],
-  screenshots: ["Explore page", "User page", "Track page"],
+  screenshots: ["Explore", "User profile", "Track"],
   name: "WaveDistrict",
   links: [
     {
