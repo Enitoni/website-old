@@ -61,13 +61,9 @@ router.get("*", async context => {
   }
 
   const wrapInContext = (element: React.ReactNode) => {
-    const sheet = new ServerStyleSheet()
-
     return (
       <ManagerContext.Provider value={manager}>
-        <StyleSheetManager sheet={sheet.instance}>
-          <ThemeProvider>{element}</ThemeProvider>
-        </StyleSheetManager>
+        <ThemeProvider>{element}</ThemeProvider>
       </ManagerContext.Provider>
     )
   }
@@ -84,12 +80,18 @@ router.get("*", async context => {
     return context.redirect(newPathname)
   }
 
+  const sheet = new ServerStyleSheet()
+  const jsx = sheet.collectStyles(app)
+  const styles = sheet.getStyleTags()
+
   stream.write(html.start)
   await promisifyPipe(renderToNodeStream(wrapInContext(<Head />)), stream)
   stream.write(html.bundles)
-  await promisifyPipe(renderToNodeStream(app), stream)
+  stream.write(styles)
+  await promisifyPipe(renderToNodeStream(jsx), stream)
   stream.write(html.app)
 
+  sheet.seal()
   stream.end()
 
   context.status = routingStore.status
