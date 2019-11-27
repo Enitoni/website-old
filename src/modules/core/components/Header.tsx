@@ -8,6 +8,7 @@ import {
 import { getColor, getShadow } from "../../theming/helpers"
 import React from "react"
 import { HeaderLink } from "./HeaderLink"
+import { ThemeToggles } from "../../theming/components/ThemeToggle"
 
 const Container = styled.div`
   position: fixed;
@@ -28,6 +29,8 @@ const Container = styled.div`
 `
 
 const Content = styled.header`
+  display: flex;
+
   height: ${HEADER_HEIGHT};
   width: ${CONTENT_WIDTH};
 
@@ -51,6 +54,7 @@ const Content = styled.header`
 
 const Nav = styled.nav`
   display: flex;
+  flex: 1;
 `
 
 export function Header() {
@@ -61,6 +65,7 @@ export function Header() {
           <HeaderLink to="/" label="My projects" icon="home" />
           <HeaderLink to="/about" label="About me" icon="book" />
         </Nav>
+        <ThemeToggles />
       </Content>
     </Container>
   )
