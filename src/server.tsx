@@ -18,7 +18,9 @@ import { ManagerContext } from "./common/state/contexts/ManagerContext"
 import { getHTML } from "./common/state/helpers/getHTML"
 import { createStateSettler } from "./common/state/helpers/createStateSettler"
 import { promisifyPipe } from "./common/state/helpers/promisifyPipe"
+
 import { ThemeProvider } from "./modules/theming/components/ThemeProvider"
+import { ServerStyleSheet, StyleSheetManager } from "styled-components"
 
 const app = new Koa()
 const router = new Router()
@@ -59,9 +61,13 @@ router.get("*", async context => {
   }
 
   const wrapInContext = (element: React.ReactNode) => {
+    const sheet = new ServerStyleSheet()
+
     return (
       <ManagerContext.Provider value={manager}>
-        <ThemeProvider>{element}</ThemeProvider>
+        <StyleSheetManager sheet={sheet.instance}>
+          <ThemeProvider>{element}</ThemeProvider>
+        </StyleSheetManager>
       </ManagerContext.Provider>
     )
   }
