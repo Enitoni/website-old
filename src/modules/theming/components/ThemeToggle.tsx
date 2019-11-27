@@ -5,6 +5,7 @@ import { HEADER_HEIGHT } from "../../core/constants"
 import { useLocalStorage } from "../../../common/dom/hooks/useLocalStorage"
 import React, { useEffect } from "react"
 import { useStores } from "../../../common/state/hooks/useStores"
+import { useObserver } from "mobx-react-lite"
 
 const Container = styled(Button)<{
   active: boolean
@@ -26,8 +27,10 @@ const Container = styled(Button)<{
   }
 `
 
-export function ThemeToggles() {
+export function ThemeToggle() {
   const { ssrStore } = useStores()
+  const currentTheme = useObserver(() => ssrStore.theme)
+
   const [theme, setTheme] = useLocalStorage("theme", "light")
 
   const toggle = () => {
@@ -47,7 +50,7 @@ export function ThemeToggles() {
   return (
     <Container
       title="Toggle dark theme"
-      active={theme === "dark"}
+      active={currentTheme === "dark"}
       icon="moon"
       onClick={toggle}
     />
