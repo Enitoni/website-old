@@ -56,7 +56,7 @@ export function ImageRenderer(props: ImageRendererProps) {
 
   if (IS_SERVER) {
     return (
-      <Container>
+      <Container className={className}>
         <RenderedImage
           role="img"
           aria-label={alt}
