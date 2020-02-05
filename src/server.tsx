@@ -20,7 +20,7 @@ import { createStateSettler } from "./common/state/helpers/createStateSettler"
 import { promisifyPipe } from "./common/state/helpers/promisifyPipe"
 
 import { ThemeProvider } from "./modules/theming/components/ThemeProvider"
-import { ServerStyleSheet, StyleSheetManager } from "styled-components"
+import { ServerStyleSheet } from "styled-components"
 
 const app = new Koa()
 const router = new Router()
