@@ -3,5 +3,6 @@ import { gears } from "./gears"
 import { skins } from "./skins"
 import { website } from "./website"
 import { redCircuit } from "./redcircuit"
+import { frikanalen } from "./frikanalen"
 
-export default [waveDistrict, redCircuit, gears, website, skins]
+export default [waveDistrict, frikanalen, redCircuit, gears, website, skins]
