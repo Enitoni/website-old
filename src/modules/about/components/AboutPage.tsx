@@ -23,6 +23,7 @@ const Avatar = styled(ImageRenderer)`
 
   border-radius: 100%;
   flex-shrink: 0;
+  
 
   ${SINGLE_COLUMN_QUERY} {
     padding-bottom: 100%;

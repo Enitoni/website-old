@@ -35,8 +35,9 @@ const RenderedImage = styled.div<{ status: TransitionStatus }>`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  image-rendering: -webkit-optimize-contrast;
 
-  ${props => {
+  ${(props) => {
     const { status } = props
 
     if (status === "entering")
@@ -85,7 +86,7 @@ export function ImageRenderer(props: ImageRendererProps) {
 
     return (
       <Transition key={currentSrc} timeout={500}>
-        {status => (
+        {(status) => (
           <RenderedImage
             status={status}
             role="img"
