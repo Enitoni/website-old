@@ -49,9 +49,8 @@ const ContactTitle = styled(Title)`
   margin-bottom: 32px;
 `
 
-const ContactContainer = styled(Card)`
+const ContactContainer = styled.div`
   margin-top: 32px;
-  padding: 64px;
 
   ${SINGLE_COLUMN_QUERY} {
     padding: 32px;
@@ -67,13 +66,13 @@ export function AboutPage() {
   return (
     <>
       <AboutContainer>
-        <Avatar alt="Profile picture" src="/img/avatar.jpg" />
+        <Avatar alt="Profile picture" src="/img/avatar.png" />
         <Content>
           <Title>About me</Title>
           <p>
-            My name is Sebastian and I was born in the small town of Kristiansand where I
-            grew up for most of my childhood. I have always been interested in computers
-            and technology, and got my first computer when I was around 7 years old.
+            Sebastian here. I was born in the small town of Kristiansand in Norway where I
+            grew up. During that time, I have always been interested in computers and
+            technology. I got my first computer when I was only 7 years old.
           </p>
           <p>
             Since then I have been doing a variety of activities on my computer ranging
@@ -81,22 +80,26 @@ export function AboutPage() {
             notably; programming.
           </p>
           <p>
-            In early 2016 I started my journey into the world of web development. It
-            started with a project that I later named “WaveDistrict” which was a community
-            based audio platform that allowed you to upload audio to share with others,
-            similar to SoundCloud. The project was discontinued in September 2019 but it
-            has been the biggest building block for my programming knowledge today.
+            In early 2014 I started my journey into the world of web development. It
+            started with a project that I later named “WaveDistrict” which is a community
+            based audio platform that allows you to upload audio to share with others,
+            similar to SoundCloud.
           </p>
           <p>
-            I am currently looking to relocate to Oslo, either to find my dream job or to
-            study in order to solidify my knowledge.
+            I have been working on various projects as well, ranging from tiny projects I
+            did for my friends, to commissions. Many years with this has solidified my
+            knowledge in programming and made me reach a high skill level.
           </p>
+          <p>
+            Now I've moved to Oslo and I am currently looking for a job. If this is
+            interesting to you, feel free to contact me via my socials below!
+          </p>
+          <ContactContainer>
+            <ContactTitle>Socials</ContactTitle>
+            <ContactGrid />
+          </ContactContainer>
         </Content>
       </AboutContainer>
-      <ContactContainer>
-        <ContactTitle>Find me here!</ContactTitle>
-        <ContactGrid />
-      </ContactContainer>
     </>
   )
 }

@@ -21,8 +21,8 @@ const IconContainer = styled.a`
   width: 100%;
   height: 0px;
 
-  max-width: 128px;
-  max-height: 128px;
+  max-width: 72px;
+  max-height: 72px;
 
   position: relative;
 `
