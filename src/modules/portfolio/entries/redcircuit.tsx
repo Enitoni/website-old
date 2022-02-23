@@ -14,7 +14,7 @@ export const redCircuit: Project = {
   ],
   stack: [next, typescript, react, webpack, mobx],
   screenshots: ["Home"],
-  shortDescription: "A commissioned homepage for gaming community",
+  shortDescription: "A commissioned homepage for a gaming community",
   theme: {
     accent: "#D4422E",
     primary: "#121212",
