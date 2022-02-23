@@ -73,12 +73,6 @@ export const skins: Project = {
         shut down, along with the website. As it was commissioned and closed source, there
         is no available code.
       </p>
-      <p>
-        <strong>
-          Screenshots are mockups. I am working on getting real screenshots from the
-          finished website.
-        </strong>
-      </p>
     </>
   ),
 }

@@ -4,7 +4,7 @@ import { typescript, node } from "../technologies"
 
 export const gears: Project = {
   key: "gears",
-  period: ["07.2018", "present"],
+  period: ["03.2018", "03.2021"],
   name: "Gears",
   links: [
     {

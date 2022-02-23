@@ -68,8 +68,8 @@ export const waveDistrict: Project = {
   longDescription: (
     <>
       <p>
-        WaveDistrict is a community based audio platform that was discontinued in
-        September 28, 2019. The logo was designed by a friend of mine.
+        WaveDistrict is a community based audio platform that I started working on late
+        2014. The logo was designed by a friend of mine.
       </p>
       <p>
         The project allows you to upload audio and use social features such as ones found
@@ -84,9 +84,8 @@ export const waveDistrict: Project = {
         the realtime visualizer which used the Web Audio API.
       </p>
       <p>
-        I discontinued it due to cost and lack of engagement. I am extremely grateful for
-        the time spent working on this project and it has been the foundation for my
-        knowledge in programming.
+        I have not worked on it in a while, but I'd be happy to resume development in the
+        future.
       </p>
     </>
   ),
